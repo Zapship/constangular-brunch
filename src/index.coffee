@@ -12,7 +12,7 @@ module.exports = class Constangular
   compile: (data, path, callback) ->
     try
       # Check in which environment we are, fallback to 'development'
-      environment = if @config.env.length > 0 then @config.env[0] else 'development'
+      environment = if @config.env.length > 0 then @config.env[@config.env.length - 1] else 'development'
       
       # Parse the YAML file
       data = yaml.safeLoad(data)
